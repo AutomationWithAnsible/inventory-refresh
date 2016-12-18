@@ -1,0 +1,9 @@
+---
+
+- name: Refresh inventory to ensure new instaces exist in inventory
+  meta: refresh_inventory
+  when: inventory_reload is defined and inventory_reload
+
+- name: set inventory_reload
+  set_fact:
+    inventory_reload: True
